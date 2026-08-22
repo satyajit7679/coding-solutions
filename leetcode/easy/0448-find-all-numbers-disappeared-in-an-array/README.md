@@ -39,23 +39,21 @@ Output: [2]
 ## Solution
 
 **Language:** Python  
-**Runtime:** 57 ms (beats 7.76%)  
-**Memory:** 40.8 MB (beats 5.13%)  
-**Submitted:** 2026-08-22T15:16:23.117Z  
+**Runtime:** 43 ms (beats 28.20%)  
+**Memory:** 30.9 MB (beats 51.82%)  
+**Submitted:** 2026-08-22T16:02:37.637Z  
 
 ```py
 class Solution:
-    def findDisappearedNumbers(self, arr: List[int]) -> List[int]:
-        freq = {}
+    def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
+        n = len(nums)
         res = []
-        n = len(arr)
-        for i in range(1,n + 1):
-            freq[i] = 0
+        for i in nums:
+            index = abs(i) - 1
+            nums[index] = -abs(nums[index])
         for i in range(n):
-            freq[arr[i]] = 1
-        for i in range(1,n + 1):
-            if freq[i] == 0:
-                res.append(i)
+            if nums[i] > 0:
+                res.append(i + 1)
         return res
 ```
 
