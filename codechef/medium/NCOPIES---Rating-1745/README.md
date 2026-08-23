@@ -65,34 +65,26 @@ Output
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-23T19:19:06.701Z  
+**Submitted:** 2026-08-23T19:17:32.208Z  
 
 ```py
 # cook your dish here
-
 t = int(input())
-
 while t > 0:
-    n, m = map(int, input().split())
+    n, m = map(int,input().split())
     a = input()
-
-    total_ones = a.count('1') * m
-
-    prefix_ones = 0
+    total = a.count('1') * m
     ans = 0
-
-    for i in range(n * m):
-        if a[i % n] == '1':
-            prefix_ones += 1
-
-        suffix_ones = total_ones - prefix_ones
-
-        if prefix_ones == suffix_ones:
+    prefix = 0
+    for i in range(m * n):
+        curr = a[i % n]
+        if curr =='1':
+            prefix += 1
+        sufix = total - prefix
+        if prefix == sufix:
             ans += 1
-
-    print(ans)
-
     t -= 1
+    print(ans)
 ```
 
 ---
