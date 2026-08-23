@@ -67,7 +67,7 @@ Since all elements of the final array are $2$, the maximum value of the array is
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-23T17:24:58.844Z  
+**Submitted:** 2026-08-23T17:25:20.173Z  
 
 ```py
 class Solution:
