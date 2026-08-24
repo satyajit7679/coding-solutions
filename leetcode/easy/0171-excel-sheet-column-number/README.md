@@ -58,15 +58,14 @@ Output: 701
 
 **Language:** Python  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 19.3 MB (beats 12.65%)  
-**Submitted:** 2026-08-24T15:25:16.301Z  
+**Memory:** 19.2 MB (beats 83.37%)  
+**Submitted:** 2026-08-24T15:25:40.972Z  
 
 ```py
 class Solution:
     def titleToNumber(self, columnTitle: str) -> int:
-        new_str = columnTitle.upper()
         res = 0
-        for s in new_str:
+        for s in columnTitle:
             res = res * 26 + (ord(s) - ord('A') + 1)
         return res
 
