@@ -65,52 +65,26 @@ Output
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-23T19:19:59.064Z  
+**Submitted:** 2026-08-23T19:17:23.991Z  
 
 ```py
+# cook your dish here
 t = int(input())
-
 while t > 0:
-    n, m = map(int, input().split())
+    n, m = map(int,input().split())
     a = input()
-
-    ones = a.count('1')
-    total_ones = ones * m
-
-    # If total number of 1s is odd,
-    # it cannot be divided equally.
-    if total_ones % 2 != 0:
-        print(0)
-        t -= 1
-        continue
-
-    target = total_ones // 2
-
-    # Count how many positions in A have
-    # each possible prefix number of 1s.
-    freq = [0] * (ones + 1)
-
-    prefix = 0
-
-    for ch in a:
-        if ch == '1':
-            prefix += 1
-
-        freq[prefix] += 1
-
+    total = a.count('1') * m
     ans = 0
-
-    # Check each copy of A.
-    for copy in range(m):
-        before = copy * ones
-        required = target - before
-
-        if 0 <= required <= ones:
-            ans += freq[required]
-
-    print(ans)
-
+    prefix = 0
+    for i in range(m * n):
+        curr = a[i % n]
+        if curr =='1':
+            prefix += 1
+        sufix = total - prefix
+        if prefix == sufix:
+            ans += 1
     t -= 1
+    print(ans)
 ```
 
 ---
