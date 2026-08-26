@@ -40,30 +40,43 @@ Output: "ay"
 ## Solution
 
 **Language:** Python  
-**Runtime:** 75 ms (beats 5.05%)  
-**Memory:** 20.3 MB (beats 7.58%)  
-**Submitted:** 2026-08-26T14:37:51.282Z  
+**Runtime:** 12 ms (beats 98.66%)  
+**Memory:** 20 MB (beats 90.93%)  
+**Submitted:** 2026-08-26T14:38:37.476Z  
 
 ```py
+# class Solution:
+#     def removeDuplicates(self, s: str) -> str:
+#         stack = []
+#         res = ""
+#         for i in range(len(s)):
+#             if not stack:
+#                 stack.append(s[i])
+#                 continue
+
+#             if stack[-1] == s[i]:
+#                 stack.pop()
+#                 continue
+#             else:
+#                 stack.append(s[i])
+        
+#         while stack:
+#             res = stack.pop() + res
+        
+#         return res
+
+
 class Solution:
     def removeDuplicates(self, s: str) -> str:
         stack = []
-        res = ""
-        for i in range(len(s)):
-            if not stack:
-                stack.append(s[i])
-                continue
 
-            if stack[-1] == s[i]:
+        for ch in s:
+            if stack and stack[-1] == ch:
                 stack.pop()
-                continue
             else:
-                stack.append(s[i])
-        
-        while stack:
-            res = stack.pop() + res
-        
-        return res
+                stack.append(ch)
+
+        return ''.join(stack)
 
         
 ```
