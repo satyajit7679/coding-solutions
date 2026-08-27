@@ -5,9 +5,9 @@ class Solution:
         j = n - 1
         ans = float('-inf')
         while i < j:
-            l = j - i
-            res = min(height[i],height[j]) * l
-            ans = max(res,ans)
+            width = j - i
+            area = min(height[i],height[j]) * width
+            ans = max(area,ans)
             if height[i] < height[j]:
                 i += 1
             else:
