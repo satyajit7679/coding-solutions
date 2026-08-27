@@ -42,9 +42,9 @@ Output: 1
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.2 MB  
-**Submitted:** 2026-08-27T18:08:57.571Z  
+**Runtime:** 55 ms (beats 73.32%)  
+**Memory:** 29.5 MB (beats 67.57%)  
+**Submitted:** 2026-08-27T18:09:01.583Z  
 
 ```py
 class Solution:
