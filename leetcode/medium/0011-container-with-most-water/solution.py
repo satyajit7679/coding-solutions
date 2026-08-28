@@ -3,7 +3,7 @@ class Solution:
         n = len(height)
         i = 0
         j = n - 1
-        ans = float('-inf')
+        ans = 0
         while i < j:
             width = j - i
             area = min(height[i],height[j]) * width
