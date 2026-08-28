@@ -42,9 +42,9 @@ Output: 1
 ## Solution
 
 **Language:** Python  
-**Runtime:** 56 ms (beats 64.82%)  
-**Memory:** 29.7 MB (beats 38.13%)  
-**Submitted:** 2026-08-27T18:12:02.712Z  
+**Runtime:** 63 ms (beats 26.30%)  
+**Memory:** 29.5 MB (beats 67.57%)  
+**Submitted:** 2026-08-27T18:12:14.060Z  
 
 ```py
 class Solution:
@@ -52,7 +52,7 @@ class Solution:
         n = len(height)
         i = 0
         j = n - 1
-        ans = float('-inf')
+        ans = 0
         while i < j:
             width = j - i
             area = min(height[i],height[j]) * width
