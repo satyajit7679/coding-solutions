@@ -42,9 +42,9 @@ Output: 1
 ## Solution
 
 **Language:** Python  
-**Runtime:** 55 ms (beats 73.32%)  
-**Memory:** 29.5 MB (beats 67.57%)  
-**Submitted:** 2026-08-27T18:09:01.583Z  
+**Runtime:** 56 ms (beats 64.82%)  
+**Memory:** 29.7 MB (beats 38.13%)  
+**Submitted:** 2026-08-27T18:12:02.712Z  
 
 ```py
 class Solution:
@@ -54,9 +54,9 @@ class Solution:
         j = n - 1
         ans = float('-inf')
         while i < j:
-            l = j - i
-            res = min(height[i],height[j]) * l
-            ans = max(res,ans)
+            width = j - i
+            area = min(height[i],height[j]) * width
+            ans = max(area,ans)
             if height[i] < height[j]:
                 i += 1
             else:
