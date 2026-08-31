@@ -12,4 +12,5 @@ class Solution:
         for char,count in st:
             res += char * count
         return res
+
         
