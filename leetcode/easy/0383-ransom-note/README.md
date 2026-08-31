@@ -44,29 +44,27 @@ Output: true
 ## Solution
 
 **Language:** Python  
-**Runtime:** 31 ms (beats 12.17%)  
-**Memory:** 19.7 MB (beats 8.79%)  
-**Submitted:** 2026-08-31T19:37:25.058Z  
+**Runtime:** 32 ms (beats 7.16%)  
+**Memory:** 19.5 MB (beats 72.82%)  
+**Submitted:** 2026-08-31T19:37:52.072Z  
 
 ```py
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
         have = {}
         need = {}
+
         for i in range(len(ransomNote)):
             need[ransomNote[i]] = need.get(ransomNote[i], 0) + 1
-        
+
         for i in range(len(magazine)):
             have[magazine[i]] = have.get(magazine[i], 0) + 1
-        
-        for key,value in need.items():
+
+        for key, value in need.items():
             if key not in have or value > have[key]:
                 return False
-        return True 
 
-
-        
-        
+        return True
 ```
 
 ---
