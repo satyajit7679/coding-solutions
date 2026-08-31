@@ -50,9 +50,9 @@ Output: "ps"
 ## Solution
 
 **Language:** Python  
-**Runtime:** 35 ms (beats 97.37%)  
-**Memory:** 23.6 MB (beats 54.17%)  
-**Submitted:** 2026-08-31T17:48:51.196Z  
+**Runtime:** 39 ms (beats 85.85%)  
+**Memory:** 23.7 MB (beats 41.54%)  
+**Submitted:** 2026-08-31T17:51:30.925Z  
 
 ```py
 class Solution:
@@ -69,6 +69,7 @@ class Solution:
         for char,count in st:
             res += char * count
         return res
+
         
 ```
 
