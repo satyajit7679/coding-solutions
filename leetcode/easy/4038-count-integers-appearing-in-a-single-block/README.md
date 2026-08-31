@@ -50,14 +50,16 @@ Therefore, there are two special integers.
 
 **Language:** Python  
 **Runtime:** 0 ms  
-**Memory:** 19.2 MB  
-**Submitted:** 2026-08-31T18:10:23.559Z  
+**Memory:** 19.4 MB  
+**Submitted:** 2026-08-31T18:10:50.454Z  
 
 ```py
 class Solution:
     def countSpecialIntegers(self, nums: list[int]) -> int:
-        i = 0
+        i = 1
         count = 0
+        if len(nums) == 1:
+            return 1
         while i < len(nums):
             if nums[i] == nums[i - 1]:
                 count += 1
