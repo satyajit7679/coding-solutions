@@ -46,9 +46,9 @@ Output: []
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 20.6 MB (beats 28.37%)  
-**Submitted:** 2026-09-03T12:21:13.233Z  
+**Runtime:** 0 ms  
+**Memory:** 19.2 MB  
+**Submitted:** 2026-09-03T12:23:26.217Z  
 
 ```py
 # Definition for singly-linked list.
@@ -66,7 +66,9 @@ class Solution:
             curr.next = prev
             prev = curr
             curr = nex
+
         return prev
+        
 
         
 ```
