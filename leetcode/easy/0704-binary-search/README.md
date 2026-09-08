@@ -41,24 +41,28 @@ Explanation: 2 does not exist in nums so return -1
 
 **Language:** Python  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 20.7 MB (beats 9.11%)  
-**Submitted:** 2026-09-08T15:57:58.617Z  
+**Memory:** 20.5 MB (beats 37.22%)  
+**Submitted:** 2026-09-08T15:58:53.724Z  
 
 ```py
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         low = 0
-        high =  len(nums) - 1
+        high = len(nums) - 1
+
         while low <= high:
             mid = (low + high) // 2
+
             if nums[mid] == target:
                 return mid
+
             elif nums[mid] < target:
                 low = mid + 1
+
             else:
                 high = mid - 1
+
         return -1
-        
 ```
 
 ---
