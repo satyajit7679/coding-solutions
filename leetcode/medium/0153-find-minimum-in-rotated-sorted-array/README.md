@@ -58,16 +58,18 @@ Explanation: The original array was [11,13,15,17] and it was rotated 4 times.
 
 **Language:** Python  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 19.6 MB (beats 5.26%)  
-**Submitted:** 2026-09-09T18:30:04.167Z  
+**Memory:** 19.3 MB (beats 67.13%)  
+**Submitted:** 2026-09-09T18:30:40.204Z  
 
 ```py
 class Solution:
     def findMin(self, nums: List[int]) -> int:
         low = 0
         high = len(nums) - 1
+        
         while low <= high:
             mid = (low + high) // 2
+            
             if nums[mid] < nums[high]:
                 high = mid
             else:
