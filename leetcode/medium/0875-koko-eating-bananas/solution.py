@@ -18,9 +18,11 @@ class Solution:
         while low <= high:
             mid = (low + high) // 2
             k = self.fun(piles,mid)
+
             if k > h:
                 low = mid + 1
             else:
                 res = mid
                 high = mid - 1
+                
         return res        
