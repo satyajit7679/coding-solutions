@@ -49,9 +49,9 @@ Output: 23
 ## Solution
 
 **Language:** Python  
-**Runtime:** 240 ms (beats 5.74%)  
+**Runtime:** 239 ms (beats 6.05%)  
 **Memory:** 20.6 MB (beats 44.33%)  
-**Submitted:** 2026-09-12T10:09:42.354Z  
+**Submitted:** 2026-09-12T10:09:55.612Z  
 
 ```py
 class Solution:
@@ -74,11 +74,13 @@ class Solution:
         while low <= high:
             mid = (low + high) // 2
             k = self.fun(piles,mid)
+
             if k > h:
                 low = mid + 1
             else:
                 res = mid
                 high = mid - 1
+                
         return res        
 ```
 
