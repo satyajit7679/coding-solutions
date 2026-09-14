@@ -38,21 +38,18 @@ Output: false
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.2 MB  
-**Submitted:** 2026-09-14T12:09:35.329Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 19.2 MB (beats 52.35%)  
+**Submitted:** 2026-09-14T12:10:14.000Z  
 
 ```py
 class Solution:
     def rotateString(self, s: str, goal: str) -> bool:
         if len(s) != len(goal):
             return False
-        
-        if len(s) == 1:
-            return True
 
         if s == goal:
-            return False
+            return True
         
         return goal in (s + s)
 
