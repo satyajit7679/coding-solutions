@@ -54,16 +54,16 @@ Output: 3
 ## Solution
 
 **Language:** Python  
-**Runtime:** 32 ms (beats 31.74%)  
-**Memory:** 33.5 MB (beats 50.49%)  
-**Submitted:** 2026-08-22T18:14:20.833Z  
+**Runtime:** 23 ms (beats 76.81%)  
+**Memory:** 33.5 MB (beats 50.73%)  
+**Submitted:** 2026-09-15T19:47:19.564Z  
 
 ```py
 class Solution:
-    def findDuplicate(self, nums: List[int]) -> int:
+    def findDuplicate(self, nums: list[int]) -> int:
         slow = 0
         fast = 0
-        while(True):
+        while True:
             slow = nums[slow]
             fast = nums[fast]
             fast = nums[fast]
@@ -73,7 +73,6 @@ class Solution:
                     slow = nums[slow]
                     fast = nums[fast]
                 return slow
-
         
 ```
 
