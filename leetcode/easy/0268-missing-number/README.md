@@ -61,24 +61,17 @@ Given an array `nums` containing `n` distinct numbers in the range `[0, n]`, ret
 ## Solution
 
 **Language:** Python  
-**Runtime:** 15 ms (beats 19.64%)  
-**Memory:** 20.6 MB (beats 19.10%)  
-**Submitted:** 2026-09-15T19:23:21.704Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 20.5 MB (beats 41.87%)  
+**Submitted:** 2026-09-15T19:24:57.064Z  
 
 ```py
 class Solution:
     def missingNumber(self, nums: list[int]) -> int:
         n = len(nums)
-        freq = {}
-        for i in range(n + 1):
-            freq[i] = 0
-        
-        for num in nums:
-            freq[num] += 1
+        total = n * (n + 1) // 2
 
-        for i in range(n + 1):
-            if freq[i] == 0:
-                return i
+        return total - sum(nums)
 
         
 ```
