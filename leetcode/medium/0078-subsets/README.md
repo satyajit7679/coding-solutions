@@ -1,0 +1,71 @@
+# Subsets
+
+![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
+
+## Problem
+
+Given an integer array `nums` of  **unique**  elements, return  *all possible*   *subsets*   *(the power set)*.
+
+The solution set  **must not**  contain duplicate subsets. Return the solution in  **any order**.
+
+ 
+
+ **Example 1:** 
+
+```
+Input: nums = [1,2,3]
+Output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
+
+```
+
+ **Example 2:** 
+
+```
+Input: nums = [0]
+Output: [[],[0]]
+
+```
+
+ 
+
+ **Constraints:** 
+
+- 1 <= nums.length <= 10
+- -10 <= nums[i] <= 10
+- All the numbers of nums are unique.
+
+## Solution
+
+**Language:** Python  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 19.4 MB (beats 69.48%)  
+**Submitted:** 2026-09-25T12:32:08.622Z  
+
+```py
+class Solution:
+    def subsets(self, nums: list[int]) -> list[list[int]]:
+        res = []
+
+        def fun(nums, n, i, temp):
+            if i == n:
+                res.append(temp.copy())
+                return
+
+            # Don't take nums[i]
+            fun(nums, n, i + 1, temp)
+
+            # Take nums[i]
+            temp.append(nums[i])
+            fun(nums, n, i + 1, temp)
+
+            # Backtrack
+            temp.pop()
+
+        fun(nums, len(nums), 0, [])
+
+        return res
+```
+
+---
+
+[View on LeetCode](https://leetcode.com/problems/subsets/)
