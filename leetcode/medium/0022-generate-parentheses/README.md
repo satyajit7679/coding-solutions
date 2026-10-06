@@ -33,34 +33,34 @@ Output: ["()"]
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 19.4 MB (beats 36.93%)  
-**Submitted:** 2026-10-02T18:19:42.076Z  
+**Runtime:** 1 ms (beats 42.23%)  
+**Memory:** 19.3 MB (beats 95.55%)  
+**Submitted:** 2026-10-06T15:12:00.595Z  
 
 ```py
-
 class Solution:
     def generateParenthesis(self, n: int) -> list[str]:
-        result = []
 
-        def backtrack(curr, open_count, close_count):
-            # Base case: n pairs are completed
-            if len(curr) == 2 * n:
-                result.append(curr)
+        def fun(open, close, n, temp, res):
+
+            if open == n and close == n:
+                res.append(temp)
                 return
 
-            # Add opening bracket if available
-            if open_count < n:
-                backtrack(curr + "(", open_count + 1, close_count)
+            if open < n:
+                temp = temp + '('
+                fun(open + 1, close, n, temp, res)
+                temp = temp[:-1]
 
-            # Add closing bracket only when valid
-            if close_count < open_count:
-                backtrack(curr + ")", open_count, close_count + 1)
+            if close < open:
+                temp = temp + ')'
+                fun(open, close + 1, n, temp, res)
+                temp = temp[:-1]
 
-        backtrack("", 0, 0)
+        res = []
+        fun(0, 0, n, "", res)
 
-        return result
-
+        return res
 ```
 
 ---
