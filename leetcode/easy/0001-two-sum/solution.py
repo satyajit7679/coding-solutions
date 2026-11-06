@@ -1,13 +1,15 @@
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        freq = {}
-        for i in range(len(nums)):
-            need = target - nums[i]
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        i = 0 
+        j = len(nums) - 1
+        while i <= j:
+            s = nums[i] + nums[j]
+            if s < target:
+                i += 1
+            else:
+                j -= 1
+
+        return [i,j+1]
+
             
-            if need in freq:
-                return [freq[need],i]
-
-            freq[nums[i]] = i
-
-        return []
         
