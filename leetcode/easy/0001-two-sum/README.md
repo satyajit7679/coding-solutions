@@ -14,28 +14,33 @@ You can return the answer in any order.
 
  **Example 1:** 
 
-```
-Input: nums = [2,7,11,15], target = 9
-Output: [0,1]
-Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+ **Input:**  `nums = [2,7,11,15], target = 9`
 
-```
+ **Output:**  `[0,1]`
+
+ **Explanation:** 
+
+The sum of `nums[0]` and `nums[1]` is `2 + 7 = 9`, which equals the target. Therefore, the indices `[0, 1]` are returned.
 
  **Example 2:** 
 
-```
-Input: nums = [3,2,4], target = 6
-Output: [1,2]
+ **Input:**  `nums = [3,2,4], target = 6`
 
-```
+ **Output:**  `[1,2]`
+
+ **Explanation:** 
+
+The sum of `nums[1]` and `nums[2]` is `2 + 4 = 6`, which equals the target. Therefore, the indices `[1, 2]` are returned.
 
  **Example 3:** 
 
-```
-Input: nums = [3,3], target = 6
-Output: [0,1]
+ **Input:**  `nums = [3,3], target = 6`
 
-```
+ **Output:**  `[0,1]`
+
+ **Explanation:** 
+
+The sum of `nums[0]` and `nums[1]` is `3 + 3 = 6`, which equals the target. Therefore, the indices `[0, 1]` are returned.
 
  
 
@@ -53,23 +58,25 @@ Output: [0,1]
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 20.4 MB (beats 59.51%)  
-**Submitted:** 2026-09-23T13:01:48.494Z  
+**Runtime:** 0 ms  
+**Memory:** 19.2 MB  
+**Submitted:** 2026-11-06T09:38:08.618Z  
 
 ```py
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        freq = {}
-        for i in range(len(nums)):
-            need = target - nums[i]
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        i = 0 
+        j = len(nums) - 1
+        while i <= j:
+            s = nums[i] + nums[j]
+            if s < target:
+                i += 1
+            else:
+                j -= 1
+
+        return [i,j+1]
+
             
-            if need in freq:
-                return [freq[need],i]
-
-            freq[nums[i]] = i
-
-        return []
         
 ```
 
