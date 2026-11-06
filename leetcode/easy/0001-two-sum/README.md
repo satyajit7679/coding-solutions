@@ -58,25 +58,27 @@ The sum of `nums[0]` and `nums[1]` is `3 + 3 = 6`, which equals the target. Ther
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.2 MB  
-**Submitted:** 2026-11-06T09:38:08.618Z  
+**Runtime:** 1 ms (beats 63.78%)  
+**Memory:** 20.3 MB (beats 61.90%)  
+**Submitted:** 2026-11-06T09:48:31.613Z  
 
 ```py
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
-        i = 0 
-        j = len(nums) - 1
-        while i <= j:
-            s = nums[i] + nums[j]
-            if s < target:
-                i += 1
-            else:
-                j -= 1
 
-        return [i,j+1]
+        freq = {}
 
-            
+        for i in range(len(nums)):
+            need = target - nums[i]
+
+            if need in freq:
+                return [freq[need],i]
+
+            freq[nums[i]] = i
+
+        return []
+
+
         
 ```
 
