@@ -2,21 +2,20 @@ class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
-        f = {}
-        w = {}
+        freq = {}
         for ch in s:
-            if ch in f:
-                f[ch] += 1
+            if ch in freq:
+                freq[ch] += 1
             else:
-                f[ch] = 1
+                freq[ch] = 1
         
         for ch in t:
-            if ch not in f:
+            if ch not in freq:
                 return False
             
-            f[ch] -= 1
+            freq[ch] -= 1
 
-            if f[ch] < 0:
+            if freq[ch] < 0:
                 return False
 
         return True
