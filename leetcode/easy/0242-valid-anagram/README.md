@@ -36,15 +36,16 @@ Python3
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 18.9 MB  
-**Submitted:** 2026-11-13T05:04:44.838Z  
+**Runtime:** 13 ms (beats 50.83%)  
+**Memory:** 19.5 MB (beats 29.16%)  
+**Submitted:** 2026-11-13T05:04:50.529Z  
 
 ```py
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
+            
         freq = {}
         for ch in s:
             if ch in freq:
