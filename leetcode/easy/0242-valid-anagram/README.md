@@ -8,6 +8,8 @@ Given two strings `s` and `t`, return `true` if `t` is an anagram of `s`, and `f
 
  
 
+Original
+Python3
  **Example 1:** 
 
  **Input:**  s = "anagram", t = "nagaram"
@@ -34,30 +36,29 @@ Given two strings `s` and `t`, return `true` if `t` is an anagram of `s`, and `f
 ## Solution
 
 **Language:** Python  
-**Runtime:** 13 ms (beats 50.72%)  
-**Memory:** 19.4 MB (beats 46.40%)  
-**Submitted:** 2026-11-05T14:48:32.848Z  
+**Runtime:** 0 ms  
+**Memory:** 18.9 MB  
+**Submitted:** 2026-11-13T05:04:44.838Z  
 
 ```py
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
-        f = {}
-        w = {}
+        freq = {}
         for ch in s:
-            if ch in f:
-                f[ch] += 1
+            if ch in freq:
+                freq[ch] += 1
             else:
-                f[ch] = 1
+                freq[ch] = 1
         
         for ch in t:
-            if ch not in f:
+            if ch not in freq:
                 return False
             
-            f[ch] -= 1
+            freq[ch] -= 1
 
-            if f[ch] < 0:
+            if freq[ch] < 0:
                 return False
 
         return True
