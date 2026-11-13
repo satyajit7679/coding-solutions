@@ -10,6 +10,8 @@ Notice that the solution set must not contain duplicate triplets.
 
  
 
+Original
+Python3
  **Example 1:** 
 
 ```
@@ -52,44 +54,43 @@ Explanation: The only possible triplet sums up to 0.
 ## Solution
 
 **Language:** Python  
-**Runtime:** 555 ms (beats 76.79%)  
-**Memory:** 22.3 MB (beats 55.97%)  
-**Submitted:** 2026-10-12T06:28:47.109Z  
+**Runtime:** 651 ms (beats 46.21%)  
+**Memory:** 22 MB (beats 95.59%)  
+**Submitted:** 2026-11-13T11:04:51.468Z  
 
 ```py
 class Solution:
     def threeSum(self, nums: list[int]) -> list[list[int]]:
         nums.sort()
-        n = len(nums)
         res = []
-        for i in range(n):
-            if i > 0 and nums[i] == nums[i-1]:
+        for i in range(len(nums) - 2):
+            if i > 0 and nums[i] == nums[i - 1]:
                 continue
             
-            j = i + 1
-            k = n - 1
-            s = -1 * nums[i]
-            while j < k:
-                total = nums[j] + nums[k]
-                if s == total:
-                    res.append([nums[i],nums[j],nums[k]])
+            left = i + 1
+            right = len(nums) - 1
 
-                    j += 1
-                    k -= 1
+            while left < right:
+                s = nums[i] + nums[left] + nums[right]
+                if s == 0:
+                    res.append([nums[i],nums[left],nums[right]])
+                    left += 1
+                    right -= 1
+                    while left < right and nums[left] == nums[left - 1]:
+                        left += 1
 
-                    while j < k and nums[j] == nums[j - 1]:
-                        j += 1
+                    while left < right and nums[right] == nums[right + 1]:
+                        right -= 1
 
-                    while j < k and nums[k] == nums[k + 1]:
-                        k -= 1
-
-                elif s > total:
-                    j += 1
+                elif s < 0 :
+                    left += 1
                 else:
-                    k -= 1
-
+                    right -= 1
+                
         return res
 
+
+         
 ```
 
 ---
