@@ -8,6 +8,8 @@ Given an integer array `nums` and an integer `k`, return  *the*  `k`  *most freq
 
  
 
+Original
+Python3
  **Example 1:** 
 
  **Input:**  nums = [1,1,1,2,2,3], k = 2
@@ -42,38 +44,29 @@ Given an integer array `nums` and an integer `k`, return  *the*  `k`  *most freq
 ## Solution
 
 **Language:** Python  
-**Runtime:** 4 ms (beats 68.73%)  
-**Memory:** 22.7 MB (beats 94.31%)  
-**Submitted:** 2026-09-18T09:09:14.314Z  
+**Runtime:** 357 ms (beats 5.13%)  
+**Memory:** 22.5 MB (beats 99.41%)  
+**Submitted:** 2026-11-13T05:22:54.714Z  
 
 ```py
-import heapq
-
 class Solution:
     def topKFrequent(self, nums: list[int], k: int) -> list[int]:
         freq = {}
+        res = []
+        for i in nums:
+            if i in freq:
+                freq[i] += 1
+            else:
+                freq[i] = 1
+        
+        arr = list(freq.keys())
+        
+        for i in range(len(arr)):
+            for j in range(len(arr) - 1 - i):
+                if freq[arr[j]] < freq[arr[j + 1]]:
+                    arr[j], arr[j + 1] = arr[j + 1], arr[j]
 
-        # Count frequency
-        for num in nums:
-            freq[num] = freq.get(num, 0) + 1
-
-        # Min heap
-        heap = []
-
-        for num, count in freq.items():
-            heapq.heappush(heap, (count, num))
-
-            if len(heap) > k:
-                heapq.heappop(heap)
-
-        # Extract answer
-        result = []
-
-        while heap:
-            count, num = heapq.heappop(heap)
-            result.append(num)
-
-        return result
+        return arr[:k]
 ```
 
 ---
