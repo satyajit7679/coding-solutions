@@ -44,9 +44,9 @@ Output: 1
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.1 MB  
-**Submitted:** 2026-11-14T17:45:13.220Z  
+**Runtime:** 60 ms (beats 39.55%)  
+**Memory:** 29.6 MB (beats 39.12%)  
+**Submitted:** 2026-11-14T17:45:18.735Z  
 
 ```py
 class Solution:
