@@ -14,6 +14,8 @@ Return  *the maximum amount of water a container can store*.
 
  
 
+Original
+Python3
  **Example 1:** 
 
 ```
@@ -42,26 +44,28 @@ Output: 1
 ## Solution
 
 **Language:** Python  
-**Runtime:** 63 ms (beats 26.30%)  
-**Memory:** 29.5 MB (beats 67.57%)  
-**Submitted:** 2026-08-27T18:12:14.060Z  
+**Runtime:** 0 ms  
+**Memory:** 19.1 MB  
+**Submitted:** 2026-11-14T17:45:13.220Z  
 
 ```py
 class Solution:
-    def maxArea(self, height: List[int]) -> int:
+    def maxArea(self, height: list[int]) -> int:
         n = len(height)
-        i = 0
         j = n - 1
         ans = 0
+        i = 0
         while i < j:
-            width = j - i
-            area = min(height[i],height[j]) * width
-            ans = max(area,ans)
-            if height[i] < height[j]:
-                i += 1
-            else:
+            h = min(height[i],height[j])
+            l = j - i
+            res = h * l
+            ans = max(res,ans)
+            if height[i] > height[j]:
                 j -= 1
+            else:
+                i += 1
         return ans
+
         
 ```
 
