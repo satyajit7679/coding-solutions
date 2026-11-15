@@ -12,6 +12,8 @@ You must solve this problem without using the library's sort function.
 
  
 
+Original
+Python3
  **Example 1:** 
 
  **Input:**  nums = [2,0,2,1,1,0]
@@ -48,8 +50,8 @@ The array has one each of 0, 1, and 2, arranged in-place in the order 0, 1, 2.
 
 **Language:** Python  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 19.2 MB (beats 63.81%)  
-**Submitted:** 2026-09-29T18:29:10.278Z  
+**Memory:** 19.2 MB (beats 78.47%)  
+**Submitted:** 2026-11-15T05:58:17.045Z  
 
 ```py
 class Solution:
@@ -60,9 +62,10 @@ class Solution:
         i = 0
         j = 0
         k = len(nums) - 1
+
         while j <= k:
             if nums[j] == 0:
-                nums[i],nums[j] = nums[j],nums[i]
+                nums[i], nums[j] = nums[j],nums[i]
                 i += 1
                 j += 1
             elif nums[j] == 1:
@@ -70,8 +73,9 @@ class Solution:
             else:
                 nums[j],nums[k] = nums[k],nums[j]
                 k -= 1
-
+                
         return nums
+
 ```
 
 ---
