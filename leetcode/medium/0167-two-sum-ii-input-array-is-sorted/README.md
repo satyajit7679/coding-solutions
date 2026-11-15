@@ -56,9 +56,9 @@ Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We ret
 ## Solution
 
 **Language:** Python  
-**Runtime:** 3 ms (beats 86.85%)  
-**Memory:** 22.5 MB (beats 15.53%)  
-**Submitted:** 2026-10-08T15:53:56.785Z  
+**Runtime:** 5 ms (beats 82.59%)  
+**Memory:** 22.2 MB (beats 93.78%)  
+**Submitted:** 2026-11-15T05:27:13.387Z  
 
 ```py
 class Solution:
@@ -66,15 +66,15 @@ class Solution:
         n = len(numbers)
         i = 0
         j = n - 1
+        
         while i < j:
-            total = numbers[i] + numbers[j]
-            if total == target:
-                return i + 1,j + 1
-            if total > target:
-                j -= 1
-            else:
+            s = numbers[i] + numbers[j]
+            if s == target:
+                return [i + 1,j + 1]
+            elif s < target:
                 i += 1
-        return -1
+            else:
+                j -= 1
         
 ```
 
