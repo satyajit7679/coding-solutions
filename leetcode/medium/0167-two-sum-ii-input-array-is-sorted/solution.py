@@ -3,13 +3,13 @@ class Solution:
         n = len(numbers)
         i = 0
         j = n - 1
+        
         while i < j:
-            total = numbers[i] + numbers[j]
-            if total == target:
-                return i + 1,j + 1
-            if total > target:
-                j -= 1
-            else:
+            s = numbers[i] + numbers[j]
+            if s == target:
+                return [i + 1,j + 1]
+            elif s < target:
                 i += 1
-        return -1
+            else:
+                j -= 1
         
