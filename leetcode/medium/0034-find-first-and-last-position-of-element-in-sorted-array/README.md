@@ -12,6 +12,8 @@ You must write an algorithm with `O(log n)` runtime complexity.
 
  
 
+Original
+Python3
  **Example 1:** 
 
 ```
@@ -49,46 +51,40 @@ Output: [-1,-1]
 
 **Language:** Python  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 20.5 MB (beats 61.25%)  
-**Submitted:** 2026-09-08T17:21:55.032Z  
+**Memory:** 20.4 MB (beats 84.34%)  
+**Submitted:** 2026-11-16T14:27:04.345Z  
 
 ```py
 class Solution:
-    def searchRange(self, nums: List[int], target: int) -> List[int]:
-        res = [-1,-1]
+    def searchRange(self, nums: list[int], target: int) -> list[int]:
+        low = 0
+        high = len(nums) - 1
+        first = -1
+        last = -1
+        while low <= high:
+            mid = (low + high) // 2
+            if nums[mid] == target:
+                first = mid
+                high = mid - 1
+            elif nums[mid] < target:
+                low = mid + 1
+            else:
+                high = mid - 1
+
         low = 0
         high = len(nums) - 1
 
         while low <= high:
             mid = (low + high) // 2
-
             if nums[mid] == target:
-                res[0] = mid
-                high = mid - 1
-
-            elif nums[mid] > target:
-                high = mid - 1
-
+                last = mid
+                low = mid + 1
+            elif nums[mid] < target:
+                low = mid + 1
             else:
-                low = mid + 1
-
-        low = 0
-        high = len(nums) - 1
-
-        while low <= high:
-            mid = (low + high) // 2
-
-            if nums[mid] == target:
-                res[1] = mid
-                low = mid + 1
-
-            elif nums[mid] > target:
                 high = mid - 1
-                
-            else:
-                low = mid + 1
-        
-        return res
+
+        return [first,last]
 ```
 
 ---
