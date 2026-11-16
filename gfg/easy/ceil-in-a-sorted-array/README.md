@@ -1,14 +1,16 @@
-# Ceil in a Sorted Array
+# Ceil in Sorted Array
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Easy-green)
 
 ## Problem
 
-Given a sorted array  **arr[]** and an integer  **x**, find the index (0-based) of the smallest element in arr[] that is greater than or equal to x. This element is called the  **ceil**  of x. If such an element does not exist, return -1.
+Given a sorted array  **arr[]**  (which may contain duplicate elements) and an integer  **x**, find the 0-based index of the first element greater than or equal to x. This element is called the  **ceil**  of x.
 
- **Note:**  In case of multiple occurrences of ceil of x, return the index of the first occurrence.
+If no such element exists, return -1.
 
- **Examples** 
+ **Note:**  If multiple occurrences of the ceil exist, return the index of its first occurrence.
+
+ **Examples:** 
 
 ```
 Input: arr[] = [1, 2, 8, 10, 11, 12, 19], x = 5
@@ -28,17 +30,12 @@ Output: 0
 Explanation: Smallest number greater than 0 is 1, whose indices are 0 and 1. The index of the first occurrence is 0.
 ```
 
- **Constraints:** 
-1 ≤ arr.size() ≤ 106
-1 ≤ arr[i] ≤ 106
-0 ≤ x ≤ arr[n-1]
-
 ## Solution
 
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-08T16:23:59.273Z  
+**Submitted:** 2026-11-16T12:57:12.274Z  
 
 ```py
 class Solution:
@@ -46,22 +43,16 @@ class Solution:
         # code here
         low = 0
         high = len(arr) - 1
-        index = -1
-        
+        res = -1
         while low <= high:
             mid = (low + high) // 2
-            
             if arr[mid] >= x:
-                index = mid
-                high = mid -1
-                
+                res = mid
+                high = mid - 1
             else:
                 low = mid + 1
-            
-        return index
-
-
-
+        
+        return res
 ```
 
 ---
