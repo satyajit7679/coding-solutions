@@ -10,6 +10,8 @@ You must write an algorithm with `O(log n)` runtime complexity.
 
  
 
+Original
+Python3
  **Example 1:** 
 
 ```
@@ -41,28 +43,24 @@ Explanation: 2 does not exist in nums so return -1
 
 **Language:** Python  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 20.5 MB (beats 37.22%)  
-**Submitted:** 2026-09-08T15:58:53.724Z  
+**Memory:** 20.5 MB (beats 60.48%)  
+**Submitted:** 2026-11-16T12:40:00.753Z  
 
 ```py
 class Solution:
-    def search(self, nums: List[int], target: int) -> int:
+    def search(self, nums: list[int], target: int) -> int:
         low = 0
         high = len(nums) - 1
-
         while low <= high:
             mid = (low + high) // 2
-
             if nums[mid] == target:
                 return mid
-
             elif nums[mid] < target:
                 low = mid + 1
-
             else:
                 high = mid - 1
 
-        return -1
+        return -1        
 ```
 
 ---
