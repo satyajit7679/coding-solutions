@@ -12,6 +12,8 @@ Your task is to solve it in `O(log(n))` time complexity.
 
  
 
+Original
+Python3
  **Example 1:** 
 
  **Input:**  arr = [0,1,0]
@@ -42,25 +44,24 @@ Your task is to solve it in `O(log(n))` time complexity.
 
 **Language:** Python  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 31.2 MB (beats 75.15%)  
-**Submitted:** 2026-09-09T17:33:23.350Z  
+**Memory:** 31.1 MB (beats 97.37%)  
+**Submitted:** 2026-11-16T18:03:44.923Z  
 
 ```py
 class Solution:
-    def peakIndexInMountainArray(self, arr: List[int]) -> int:
+    def peakIndexInMountainArray(self, arr: list[int]) -> int:
         low = 0
         high = len(arr) - 1
-        res = -1
+        res = 0
         while low <= high:
-            peak = (low + high) // 2
-            if arr[peak] < arr[peak + 1]:
-                low = peak + 1
-            else:
-                res = peak
-                high = peak - 1
-        
-        return res
+            mid = (low + high) // 2
+            if arr[mid] > arr[mid + 1]:
+                res = mid
+                high = mid - 1
+            elif arr[mid] < arr[mid + 1]:
+                low = mid + 1
 
+        return res
         
 ```
 
