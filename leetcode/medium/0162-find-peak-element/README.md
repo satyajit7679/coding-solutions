@@ -44,23 +44,21 @@ Explanation: Your function can return either index number 1 where the peak eleme
 
 **Language:** Python  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 19.2 MB (beats 61.60%)  
-**Submitted:** 2026-11-16T18:20:24.515Z  
+**Memory:** 19.4 MB (beats 27.63%)  
+**Submitted:** 2026-11-17T09:03:03.730Z  
 
 ```py
 class Solution:
     def findPeakElement(self, nums: list[int]) -> int:
-
         low = 0
         high = len(nums) - 1
         while low < high:
             mid = (low + high) // 2
-            
             if nums[mid] < nums[mid + 1]:
                 low = mid + 1
             else:
                 high = mid
-
+        
         return low
         
 ```
