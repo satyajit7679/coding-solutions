@@ -61,7 +61,7 @@ Explanation: The original array was [11,13,15,17] and it was rotated 4 times.
 **Language:** Python  
 **Runtime:** 0 ms  
 **Memory:** 19 MB  
-**Submitted:** 2026-11-17T09:15:18.567Z  
+**Submitted:** 2026-11-17T09:15:42.367Z  
 
 ```py
 class Solution:
@@ -72,11 +72,12 @@ class Solution:
         while low < high:
             mid = (low + high) // 2
             if nums[mid] > nums[mid + 1]:
+                res = nums[mid]
                 low = mid + 1
             else:
                 high = mid - 1
 
-        return nums[mid]
+        return res
 ```
 
 ---
