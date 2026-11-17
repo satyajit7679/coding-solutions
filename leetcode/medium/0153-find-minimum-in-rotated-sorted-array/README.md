@@ -17,6 +17,8 @@ You must write an algorithm that runs in `O(log n) time`.
 
  
 
+Original
+Python3
  **Example 1:** 
 
 ```
@@ -57,26 +59,24 @@ Explanation: The original array was [11,13,15,17] and it was rotated 4 times.
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 19.3 MB (beats 67.13%)  
-**Submitted:** 2026-09-09T18:30:40.204Z  
+**Runtime:** 0 ms  
+**Memory:** 19 MB  
+**Submitted:** 2026-11-17T09:15:18.567Z  
 
 ```py
 class Solution:
-    def findMin(self, nums: List[int]) -> int:
+    def findMin(self, nums: list[int]) -> int:
         low = 0
         high = len(nums) - 1
-        
-        while low <= high:
+        res = 0
+        while low < high:
             mid = (low + high) // 2
-            
-            if nums[mid] < nums[high]:
-                high = mid
-            else:
+            if nums[mid] > nums[mid + 1]:
                 low = mid + 1
+            else:
+                high = mid - 1
 
         return nums[mid]
-        
 ```
 
 ---
