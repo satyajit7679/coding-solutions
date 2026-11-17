@@ -59,9 +59,9 @@ Explanation: The original array was [11,13,15,17] and it was rotated 4 times.
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms  
-**Memory:** 19.2 MB  
-**Submitted:** 2026-11-17T09:21:56.392Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 19.1 MB (beats 98.55%)  
+**Submitted:** 2026-11-17T09:22:02.266Z  
 
 ```py
 class Solution:
