@@ -6,8 +6,9 @@ class Solution:
         while low < high:
             mid = (low + high) // 2
             if nums[mid] > nums[mid + 1]:
+                res = nums[mid]
                 low = mid + 1
             else:
                 high = mid - 1
 
-        return nums[mid]
+        return res
