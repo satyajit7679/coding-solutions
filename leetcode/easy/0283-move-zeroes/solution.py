@@ -9,8 +9,8 @@ class Solution:
             if nums[i] != 0:
                 nums[id],nums[i] = nums[i],nums[id]
                 id += 1
-            
-            i += 1
+            else:
+                i += 1
         
         return nums
         
