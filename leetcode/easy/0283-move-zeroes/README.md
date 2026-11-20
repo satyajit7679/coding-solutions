@@ -10,6 +10,8 @@ Given an integer array `nums`, move all `0`'s to the end of it while maintaining
 
  
 
+Original
+Python3
  **Example 1:** 
 
 ```
@@ -40,25 +42,26 @@ Output: [0]
 ## Solution
 
 **Language:** Python  
-**Runtime:** 8 ms (beats 22.68%)  
-**Memory:** 20.4 MB (beats 90.33%)  
-**Submitted:** 2026-09-23T13:15:53.443Z  
+**Runtime:** 0 ms  
+**Memory:** 19.2 MB  
+**Submitted:** 2026-11-20T05:22:31.314Z  
 
 ```py
 class Solution:
-    def moveZeroes(self, nums: List[int]) -> None:
-        n = len(nums)
+    def moveZeroes(self, nums: list[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
         i = 0
-        j = 0
-        while i < len(nums):
+        id = 0
+        while i < len(nums) - 1:
             if nums[i] != 0:
-                nums[j],nums[i] = nums[i],nums[j]
-                j += 1
-            i += 1
-
-
+                nums[id],nums[i] = nums[i],nums[id]
+                id += 1
+            else:
+                i += 1
+        
         return nums
-
         
 ```
 
