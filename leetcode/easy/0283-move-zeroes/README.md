@@ -44,7 +44,7 @@ Output: [0]
 **Language:** Python  
 **Runtime:** 0 ms  
 **Memory:** 19.2 MB  
-**Submitted:** 2026-11-20T05:22:31.314Z  
+**Submitted:** 2026-11-20T05:24:39.406Z  
 
 ```py
 class Solution:
@@ -54,12 +54,12 @@ class Solution:
         """
         i = 0
         id = 0
-        while i < len(nums) - 1:
+        while i < len(nums):
             if nums[i] != 0:
                 nums[id],nums[i] = nums[i],nums[id]
                 id += 1
-            else:
-                i += 1
+            
+            i += 1
         
         return nums
         
