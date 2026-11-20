@@ -42,9 +42,9 @@ Output: [0]
 ## Solution
 
 **Language:** Python  
-**Runtime:** 8 ms (beats 22.89%)  
-**Memory:** 20.3 MB (beats 70.71%)  
-**Submitted:** 2026-11-20T05:24:44.920Z  
+**Runtime:** 0 ms  
+**Memory:** 19.1 MB  
+**Submitted:** 2026-11-20T05:22:40.094Z  
 
 ```py
 class Solution:
@@ -58,8 +58,8 @@ class Solution:
             if nums[i] != 0:
                 nums[id],nums[i] = nums[i],nums[id]
                 id += 1
-            
-            i += 1
+            else:
+                i += 1
         
         return nums
         
