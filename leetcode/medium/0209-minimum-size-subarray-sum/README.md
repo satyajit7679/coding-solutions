@@ -8,6 +8,8 @@ Given an array of positive integers `nums` and a positive integer `target`, retu
 
  
 
+Original
+Python3
  **Example 1:** 
 
 ```
@@ -48,16 +50,16 @@ Output: 0
 ## Solution
 
 **Language:** Python  
-**Runtime:** 15 ms (beats 88.63%)  
-**Memory:** 30.5 MB (beats 46.46%)  
-**Submitted:** 2026-10-24T17:15:33.489Z  
+**Runtime:** 17 ms (beats 58.46%)  
+**Memory:** 30.5 MB (beats 84.09%)  
+**Submitted:** 2026-11-21T10:30:48.336Z  
 
 ```py
 class Solution:
     def minSubArrayLen(self, target: int, nums: list[int]) -> int:
         low = 0
-        t = 0
         min_len = float('inf')
+        t = 0
         for high in range(len(nums)):
             t += nums[high]
             while t >= target:
@@ -65,8 +67,11 @@ class Solution:
                 min_len = min(l,min_len)
                 t -= nums[low]
                 low += 1
-        return 0 if min_len == float('inf') else min_len
-
+        
+        if min_len == float('inf'):
+            return 0
+        
+        return min_len
         
 ```
 
