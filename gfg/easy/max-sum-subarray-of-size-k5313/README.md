@@ -34,28 +34,23 @@ Explanation: arr3 = 400, which is maximum.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-24T07:27:31.023Z  
+**Submitted:** 2026-11-21T10:38:32.601Z  
 
 ```py
-
 class Solution:
     def maxSubarraySum(self, arr, k):
-        low = 0
-        total = 0
-        for num in range(k):
-            total += arr[num]
-            
-        max_sum = total
-        
-        for high in range(k, len(arr)):
-            total -= arr[low]
-            low += 1
-            
-            total += arr[high]
-            if max_sum < total:
-                max_sum = total
-                
-        return max_sum
+        # code here 
+        t = 0
+        for i in range(k):
+            t += arr[i]
+        i = 0
+        max_t = t
+        for j in range(k,len(arr)):
+            t = t - arr[i] + arr[j]
+            if max_t < t:
+                max_t = t
+            i += 1
+        return max_t
 ```
 
 ---
