@@ -53,25 +53,21 @@ The input binary string  **1111111111111111111111111111101**  has a total of thi
 ## Solution
 
 **Language:** Python  
-**Runtime:** 3 ms (beats 9.55%)  
-**Memory:** 19.2 MB (beats 42.09%)  
-**Submitted:** 2026-11-22T10:25:45.913Z  
+**Runtime:** 1 ms (beats 35.86%)  
+**Memory:** 19.3 MB (beats 42.09%)  
+**Submitted:** 2026-11-22T10:27:45.427Z  
 
 ```py
 class Solution:
     def hammingWeight(self, n: int) -> int:
         if n == 0:
             return 0
-        b = []
-        while n > 0:
-            b.append(str(n % 2))
-            n = n // 2
 
-        
         count = 0
-        for i in range(len(b)):
-            if b[i] == "1":
-                count += 1
+
+        while n > 0:
+            count += n % 2
+            n = n // 2
         
         return count
 ```
