@@ -34,24 +34,22 @@ Explanation : The decimal equivalent of the binary number 100001 is 25 + 20 = 33
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-18T14:48:51.129Z  
+**Submitted:** 2026-11-22T10:09:05.051Z  
 
 ```py
-
 class Solution:
-    def binaryToDecimal(self, b):
-        b = int(b)
+	def binaryToDecimal(self, b):
+		# code here
+		b = int(b)
         p = 0
         ans = 0
-
         while b != 0:
             r = b % 10
-            ans = ans + (r * (2 ** p))
+            ans = ans + ((2**p)*r)
             p += 1
             b = b // 10
 
         return ans
-
 ```
 
 ---
