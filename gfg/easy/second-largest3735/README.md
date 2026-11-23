@@ -33,23 +33,23 @@ Explanation: The largest element of the array is 10 and the second largest eleme
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-15T14:48:33.733Z  
+**Submitted:** 2026-11-23T18:37:00.856Z  
 
 ```py
 class Solution:
     def getSecondLargest(self, arr):
         # code here
-        l = arr[0]
-        sl = -1
-        for i in range(1,len(arr)):
-            if arr[i] > l:
-                sl = l
-                l = arr[i]
-            if arr[i] > sl and arr[i] < l:
-                sl = arr[i]
-        
-        return sl
+        s_max = -1
+        max_ele = -1
+        for i in range(len(arr)):
+            if arr[i] > max_ele:
+                s_max = max_ele
+                max_ele = arr[i]
+            
+            if arr[i] != max_ele and arr[i] > s_max:
+                s_max = arr[i]
                 
+        return s_max
 ```
 
 ---
