@@ -8,6 +8,8 @@ Given an array `nums` containing `n` distinct numbers in the range `[0, n]`, ret
 
  
 
+Original
+Python3
  **Example 1:** 
 
  **Input:**  nums = [3,0,1]
@@ -61,24 +63,23 @@ Given an array `nums` containing `n` distinct numbers in the range `[0, n]`, ret
 ## Solution
 
 **Language:** Python  
-**Runtime:** 9 ms (beats 27.45%)  
-**Memory:** 20.7 MB (beats 11.95%)  
-**Submitted:** 2026-09-15T19:25:16.147Z  
+**Runtime:** 4 ms (beats 46.69%)  
+**Memory:** 20.2 MB (beats 96.48%)  
+**Submitted:** 2026-11-23T18:41:41.472Z  
 
 ```py
 class Solution:
     def missingNumber(self, nums: list[int]) -> int:
         n = len(nums)
-        freq = {}
-        for i in range(n + 1):
-            freq[i] = 0
-        
-        for num in nums:
-            freq[num] += 1
+        s = 0
+        for i in range(len(nums)):
+            s += nums[i]
 
+        t = 0
         for i in range(n + 1):
-            if freq[i] == 0:
-                return i
+            t += i
+
+        return (t - s)
 
         
 ```
