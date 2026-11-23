@@ -41,24 +41,19 @@ Python3
 ## Solution
 
 **Language:** Python  
-**Runtime:** 10 ms (beats 16.10%)  
-**Memory:** 21.5 MB (beats 15.65%)  
-**Submitted:** 2026-11-23T15:33:55.440Z  
+**Runtime:** 2 ms (beats 64.72%)  
+**Memory:** 21.3 MB (beats 43.57%)  
+**Submitted:** 2026-11-23T15:34:16.991Z  
 
 ```py
 class Solution:
     def singleNumber(self, nums: list[int]) -> int:
-        freq = {}
-        for i in range(len(nums)):
-            if nums[i] in freq:
-                freq[nums[i]] += 1
-            else:
-                freq[nums[i]] = 1
+        x = 0
 
-        for i in freq:
-            if freq[i] == 1:
-                return i
-        
+        for i in range(len(nums)):
+            x = x ^ nums[i]
+
+        return x
 ```
 
 ---
